@@ -1214,9 +1214,6 @@ MonoBehaviour:
   yellowDoor: {fileID: 738154269}
   blueDoor: {fileID: 52012671}
   redDoor: {fileID: 587188906}
-  yellowKey: {fileID: 648865650}
-  blueKey: {fileID: 903502843}
-  redKey: {fileID: 719295087}
   moveDistance: 5
   moveTime: 2
   pickupTime: 0.5
