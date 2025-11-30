@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KeyState : MonoBehaviour
 {
-
     private MechanicScript logic;
     public bool gotKey = false;
     void Start()
@@ -18,18 +17,6 @@ public class KeyState : MonoBehaviour
         {
             gotKey = true;
             logic.PickupItem(this.gameObject);
-            // if (gameObject.name == "Yellow Key")
-            // {
-            //     logic.PickupYellowKey();
-            // }
-            // else if (gameObject.name == "Blue Key")
-            // {
-            //     logic.PickupBlueKey();
-            // }
-            // else if (gameObject.name == "Red Key")
-            // {
-            //     logic.PickupRedKey();
-            // }
         } 
     }
 }
