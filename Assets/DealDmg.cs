@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DealDmg : MonoBehaviour
+public class dealDmg : MonoBehaviour
 {
     public HealthManager healthManager;
-    public void Start()
-    {
-        
-    }
-
+    public Stats playerStats;
+    public Stats cubeStats;
+    // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("took dmg");
-        healthManager.TakeDamage(1);
+        if (other.CompareTag("Player"))
+        {
+            playerStats.curHealth = healthManager.TakeDamage(playerStats, cubeStats.dmg);
+        }
     }
 }
