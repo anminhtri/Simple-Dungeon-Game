@@ -568,7 +568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0acb641b88056342b673a9e600a8306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 2120473224}
+  playerStats: {fileID: 11400000, guid: e9b5c54cc6cfbbc468702793551661d3, type: 2}
+  cubeStats: {fileID: 11400000, guid: 42ebffe465f0971458b7b98c8f796413, type: 2}
 --- !u!1 &63156675
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +859,7 @@ GameObject:
   - component: {fileID: 79124631}
   - component: {fileID: 79124630}
   m_Layer: 5
-  m_Name: Heart 3
+  m_Name: Heart 3 (P_FH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,7 +1529,7 @@ GameObject:
   - component: {fileID: 187004890}
   - component: {fileID: 187004889}
   m_Layer: 5
-  m_Name: Heart 4
+  m_Name: Heart 4 (P_FH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2489,7 +2491,7 @@ GameObject:
   - component: {fileID: 409112793}
   - component: {fileID: 409112792}
   m_Layer: 5
-  m_Name: Heart 4
+  m_Name: Heart 4 (P_EH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4664,7 +4666,7 @@ GameObject:
   - component: {fileID: 841275153}
   - component: {fileID: 841275152}
   m_Layer: 5
-  m_Name: Heart 1
+  m_Name: Heart 1 (P_EH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4899,7 +4901,7 @@ GameObject:
   - component: {fileID: 880001004}
   - component: {fileID: 880001003}
   m_Layer: 5
-  m_Name: Heart 5
+  m_Name: Heart 5 (P_FH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7578,6 +7580,7 @@ GameObject:
   - component: {fileID: 1317951172}
   - component: {fileID: 1317951174}
   - component: {fileID: 1317951175}
+  - component: {fileID: 1317951176}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7644,6 +7647,26 @@ MonoBehaviour:
   turnDuration: 0.1
   cam: {fileID: 963194228}
   animator: {fileID: 798721047}
+--- !u!114 &1317951176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317951167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd782de4b729654da4bc95ff985da3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthManager: {fileID: 2120473224}
+  playerStats: {fileID: 11400000, guid: e9b5c54cc6cfbbc468702793551661d3, type: 2}
+  hearts:
+  - {fileID: 2086701251}
+  - {fileID: 1430649205}
+  - {fileID: 79124628}
+  - {fileID: 187004887}
+  - {fileID: 880001001}
 --- !u!1 &1344890836
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,7 +8456,7 @@ GameObject:
   - component: {fileID: 1430649208}
   - component: {fileID: 1430649207}
   m_Layer: 5
-  m_Name: Heart 2
+  m_Name: Heart 2 (P_FH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9765,7 +9788,7 @@ GameObject:
   - component: {fileID: 1622947212}
   - component: {fileID: 1622947211}
   m_Layer: 5
-  m_Name: Heart 3
+  m_Name: Heart 3 (P_EH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10080,7 +10103,7 @@ GameObject:
   - component: {fileID: 1652523957}
   - component: {fileID: 1652523956}
   m_Layer: 5
-  m_Name: Heart 2
+  m_Name: Heart 2 (P_EH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10155,7 +10178,7 @@ GameObject:
   - component: {fileID: 1654018979}
   - component: {fileID: 1654018978}
   m_Layer: 5
-  m_Name: Heart 5
+  m_Name: Heart 5 (P_EH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12660,7 +12683,7 @@ GameObject:
   - component: {fileID: 2086701254}
   - component: {fileID: 2086701253}
   m_Layer: 5
-  m_Name: Heart 1
+  m_Name: Heart 1 (P_FH)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12865,9 +12888,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2120473223}
+  - component: {fileID: 2120473224}
   m_Layer: 0
   m_Name: Health Manager
-  m_TagString: Health
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12887,6 +12911,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2120668409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2120473224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120473222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e00e46a103e73489276fa3c58d37ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2120668408
 GameObject:
   m_ObjectHideFlags: 0
