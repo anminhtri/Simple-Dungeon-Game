@@ -6492,6 +6492,7 @@ MonoBehaviour:
   time: {fileID: 1797872877}
   scoreInput: {fileID: 1155227503}
   leaderboard: {fileID: 1782851801}
+  dead: {fileID: 22944680}
   health: {fileID: 764010224}
   cam: {fileID: 963194228}
   loadScore: {fileID: 498695076}
@@ -10001,7 +10002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639045426}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06164603, y: 0, z: 0, w: 0.9980981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

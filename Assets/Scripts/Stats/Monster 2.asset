@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bc0bcf14ff819458ec8fbe01862049, type: 3}
   m_Name: Monster 2
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  dmg: 0
+  maxHealth: 5
+  dmg: 2

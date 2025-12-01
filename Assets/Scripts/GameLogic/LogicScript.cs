@@ -14,6 +14,7 @@ public class LogicScript : MonoBehaviour
     public GameObject time;
     public GameObject scoreInput;
     public GameObject leaderboard;
+    public GameObject dead;
     public GameObject health;
     public Transform cam;
     public static bool isStart = false;
@@ -28,9 +29,7 @@ public class LogicScript : MonoBehaviour
         {
             startGame.SetActive(true);
             time.SetActive(false);
-            Time.timeScale = 0f;
-            layer.enabled = true;
-            health.SetActive(false);
+            TimeFreeze();
         }
     }
     public void TimeFlow()
@@ -88,6 +87,11 @@ public class LogicScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         isStart = false;
+        TimeFreeze();
+    }
+    public void Dead()
+    {
+        dead.SetActive(true);
         TimeFreeze();
     }
     public void ShowInput()
