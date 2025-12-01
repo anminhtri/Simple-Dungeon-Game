@@ -10,7 +10,7 @@ public class Player_Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerStats.curHealth = playerStats.maxHealth;
     }
 
     // Update is called once per frame

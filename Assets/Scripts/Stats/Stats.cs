@@ -6,6 +6,7 @@ using UnityEngine;
 public class Stats : ScriptableObject
 {
     public int maxHealth;
+    [System.NonSerialized]
     public int curHealth;
     public int dmg;
 }
