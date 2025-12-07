@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movements : MonoBehaviour
@@ -9,6 +10,9 @@ public class Movements : MonoBehaviour
     public float turnDuration;
     public Transform cam;
     public Animator animator;
+    public GameObject atkBox;
+    public float lastAtkTime = 0f;
+    public float cooldown = 1f;
     private float turnVelocity;
     private Vector3 velocity;
     private float gravity = -9.81f;
@@ -47,11 +51,19 @@ public class Movements : MonoBehaviour
             else
             {
                 animator.SetBool("isRunning", false);
-            }
-
+            }          
             if (Input.GetMouseButtonDown(0))
             {
-                animator.SetTrigger("Attack");
+                if (Time.time - lastAtkTime >= cooldown)
+                {
+                    animator.SetTrigger("Attack");
+                    lastAtkTime = Time.time;
+                    atkBox.SetActive(true);
+                }
+            }
+            if (Time.time - lastAtkTime >= cooldown)
+            {
+                atkBox.SetActive(false);
             }
             if (Input.GetMouseButton(1))
             {
