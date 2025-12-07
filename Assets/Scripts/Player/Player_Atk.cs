@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dealDmg : MonoBehaviour
+public class Player_Atk : MonoBehaviour
 {
     public HealthManager healthManager;
     public Stats playerStats;
@@ -10,9 +10,9 @@ public class dealDmg : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Monster"))
         {
-            playerStats.curHealth = healthManager.TakeDamage(playerStats, monsterStats.dmg);
+            monsterStats.curHealth = healthManager.TakeDamage(monsterStats, playerStats.dmg);
         }
     }
 }

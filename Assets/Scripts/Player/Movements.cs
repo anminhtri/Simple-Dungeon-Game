@@ -53,6 +53,14 @@ public class Movements : MonoBehaviour
             {
                 animator.SetTrigger("Attack");
             }
+            if (Input.GetMouseButton(1))
+            {
+                animator.SetBool("isBlocking", true);
+            }
+            else
+            {
+                animator.SetBool("isBlocking", false);
+            }
         }
     }
 }
