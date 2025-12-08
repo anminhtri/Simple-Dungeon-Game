@@ -16,6 +16,7 @@ public class Movements : MonoBehaviour
     private Vector3 velocity;
     private float gravity = -9.81f;
     private float lastAtkTime = 0f;
+    public static bool isBlock = false;
 
     void Start()
     {
@@ -68,10 +69,12 @@ public class Movements : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 animator.SetBool("isBlocking", true);
+                isBlock = true;
             }
             else
             {
                 animator.SetBool("isBlocking", false);
+                isBlock = false;
             }
         }
     }
