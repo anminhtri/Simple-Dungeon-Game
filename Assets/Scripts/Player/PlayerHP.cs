@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Health : MonoBehaviour
+public class PlayerHP : MonoBehaviour
 {
     private LogicScript logic;
     public HealthManager healthManager;
     public Stats playerStats;
     public GameObject [] hearts;
+    public Animator animator;
+    private bool isDying = false;
+    private float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +24,17 @@ public class Player_Health : MonoBehaviour
         healthManager.UpdateHearts(playerStats, hearts);
         if (playerStats.curHealth == 0)
         {
-            logic.Dead();
-            playerStats.curHealth = playerStats.maxHealth;
+            animator.SetTrigger("Die");
+            isDying = true;
+        }
+        if (isDying)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 1f)
+            {
+                logic.Dead();
+                playerStats.curHealth = playerStats.maxHealth;
+            }
         }
     }
 }

@@ -11,11 +11,11 @@ public class Movements : MonoBehaviour
     public Transform cam;
     public Animator animator;
     public GameObject atkBox;
-    public float lastAtkTime = 0f;
     public float cooldown = 1f;
     private float turnVelocity;
     private Vector3 velocity;
     private float gravity = -9.81f;
+    private float lastAtkTime = 0f;
 
     void Start()
     {
@@ -61,7 +61,7 @@ public class Movements : MonoBehaviour
                     atkBox.SetActive(true);
                 }
             }
-            if (Time.time - lastAtkTime >= cooldown)
+            if (Time.time - lastAtkTime >= cooldown*0.1)
             {
                 atkBox.SetActive(false);
             }

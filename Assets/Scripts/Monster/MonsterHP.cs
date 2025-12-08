@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class Monster_1_HP : MonoBehaviour
+public class MonsterHP : MonoBehaviour
 {
     private LogicScript logic;
     public HealthManager healthManager;
     public Stats monsterStats;
     public GameObject [] hearts;
+    public Animator animator;
+    private bool isDying = false;
+    private float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +25,19 @@ public class Monster_1_HP : MonoBehaviour
         healthManager.UpdateHearts(monsterStats, hearts);
         if (monsterStats.curHealth == 0)
         {
-            this.gameObject.SetActive(false);
+            animator.SetTrigger("Die");
+            isDying = true;
+            timer = 0f;           
             monsterStats.curHealth = monsterStats.maxHealth;
+        }
+        if (isDying)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 2f)
+            {
+                this.gameObject.SetActive(false);
+                monsterStats.curHealth = monsterStats.maxHealth;
+            }
         }
     }
 }

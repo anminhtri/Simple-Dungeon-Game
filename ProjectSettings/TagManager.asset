@@ -8,7 +8,6 @@ TagManager:
   - Mechanic
   - Leaderboard
   - Health
-  - Monster
   layers:
   - Default
   - TransparentFX
