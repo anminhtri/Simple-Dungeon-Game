@@ -9,6 +9,8 @@ public class MechanicScript : MonoBehaviour
     public GameObject yellowDoor;
     public GameObject blueDoor;
     public GameObject redDoor;
+    public GameObject door1;
+    public GameObject door2;
     public float moveDistance;
     public float moveTime;
     public float pickupTime;
@@ -39,5 +41,15 @@ public class MechanicScript : MonoBehaviour
     public void OpenRedDoor()
     {
         OpenDoor(redDoor);
+    }
+
+    public void OpenDoor1()
+    {
+        OpenDoor(door1);
+    }
+
+    public void OpenDoor2()
+    {
+        OpenDoor(door2);
     }
 }
