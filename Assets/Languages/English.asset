@@ -13,4 +13,42 @@ MonoBehaviour:
   m_Name: English
   m_EditorClassIdentifier: 
   languageName: English
-  dictionary: []
+  dictionary:
+  - key: Cancel
+    placeholder: Cancel
+  - key: Congrats
+    placeholder: Game Complete!
+  - key: Continue
+    placeholder: Continue
+  - key: Enter Name
+    placeholder: Enter Name...
+  - key: Languages
+    placeholder: Languages
+  - key: Leaderboard
+    placeholder: Leaderboard
+  - key: Leave
+    placeholder: Leave
+  - key: Okay
+    placeholder: OK
+  - key: Play Again
+    placeholder: Play Again
+  - key: Player
+    placeholder: Player
+  - key: Quit Game
+    placeholder: Quit Game
+  - key: Quit to Menu
+    placeholder: Quit to Menu
+  - key: Ranking
+    placeholder: Ranking
+  - key: Reset PR
+    placeholder: Reset
+  - key: Restart
+    placeholder: Restart
+  - key: Score
+    placeholder: Score
+  - key: Start
+    placeholder: Start Game
+  - key: Top 3
+    placeholder: New Top 3 Record!
+  - key: You Died
+    placeholder: YOU DIED

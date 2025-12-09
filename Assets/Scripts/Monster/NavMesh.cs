@@ -38,7 +38,7 @@ public class NavMesh : MonoBehaviour
                 agent2.SetDestination(player.position);
                 animator.SetBool("IsMoving", true);
             }
-            else if (isDying1.isDying == false)
+            else
             {
                 agent2.ResetPath();
                 animator.SetBool("IsMoving", false);

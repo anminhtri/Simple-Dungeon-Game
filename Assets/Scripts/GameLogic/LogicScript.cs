@@ -16,6 +16,7 @@ public class LogicScript : MonoBehaviour
     public GameObject leaderboard;
     public GameObject dead;
     public GameObject health;
+    public GameObject langSelect;
     public Transform cam;
     public static bool isStart = false;
     public static bool isControl = false;
@@ -116,5 +117,31 @@ public class LogicScript : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
         Debug.Log("All PlayerPrefs cleared!");
+    }
+    public void ShowLS()
+    {
+        if (isStart)
+        {
+            pauseGame.SetActive(false);
+            langSelect.SetActive(true);
+        }
+        else
+        {
+            startGame.SetActive(false);
+            langSelect.SetActive(true);    
+        }
+    }
+    public void HideLS()
+    {
+        if (isStart)
+        {
+            pauseGame.SetActive(true);
+            langSelect.SetActive(false);
+        }
+        else
+        {
+            startGame.SetActive(true);
+            langSelect.SetActive(false);           
+        }
     }
 }
