@@ -33,6 +33,7 @@ public class PlayerHP : MonoBehaviour
             if (timer >= 1f)
             {
                 logic.Dead();
+                isDying = false;
                 playerStats.curHealth = playerStats.maxHealth;
             }
         }

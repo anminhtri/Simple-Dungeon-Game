@@ -243,6 +243,7 @@ MonoBehaviour:
   atkBox: {fileID: 56510538}
   cooldown: 1
   animator: {fileID: 659154074}
+  atkCheck: 0
 --- !u!1 &20046600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   atkBox: {fileID: 834858757}
   cooldown: 1
   animator: {fileID: 1673892898}
+  atkCheck: 0
 --- !u!65 &141133253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2285,6 +2287,8 @@ GameObject:
   - component: {fileID: 318891217}
   - component: {fileID: 318891216}
   - component: {fileID: 318891215}
+  - component: {fileID: 318891218}
+  - component: {fileID: 318891219}
   m_Layer: 0
   m_Name: Mimic 2
   m_TagString: Untagged
@@ -2361,6 +2365,7 @@ MonoBehaviour:
   monsterHP: {fileID: 186281027}
   monstertrigger1: {fileID: 2187266}
   monstertrigger2: {fileID: 141133250}
+  isDying: 0
 --- !u!65 &318891217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2382,6 +2387,49 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!195 &318891218
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318891213}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 100
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &318891219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318891213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5382825ef1802c14ebf2c961dd92878e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent1: {fileID: 781409252}
+  agent2: {fileID: 318891218}
+  player: {fileID: 1317951172}
+  check1: {fileID: 2089460009}
+  check2: {fileID: 551268958}
+  atkCheck1: {fileID: 2187272}
+  atkCheck2: {fileID: 141133252}
+  isDying1: {fileID: 781409249}
+  isDying2: {fileID: 318891216}
 --- !u!1 &333364414
 GameObject:
   m_ObjectHideFlags: 3
@@ -3716,6 +3764,7 @@ MonoBehaviour:
   monsterHP: {fileID: 186281027}
   animatorMimic1: {fileID: 659154074}
   animatorMimic2: {fileID: 1673892898}
+  playerCheck: 0
 --- !u!65 &551268959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5510,6 +5559,7 @@ GameObject:
   - component: {fileID: 781409249}
   - component: {fileID: 781409251}
   - component: {fileID: 781409252}
+  - component: {fileID: 781409253}
   m_Layer: 0
   m_Name: Mimic 1
   m_TagString: Untagged
@@ -5559,6 +5609,7 @@ MonoBehaviour:
   monsterHP: {fileID: 186281027}
   monstertrigger1: {fileID: 2187266}
   monstertrigger2: {fileID: 141133250}
+  isDying: 0
 --- !u!65 &781409250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5617,18 +5668,39 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &781409253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781409247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5382825ef1802c14ebf2c961dd92878e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent1: {fileID: 781409252}
+  agent2: {fileID: 318891218}
+  player: {fileID: 1317951172}
+  check1: {fileID: 2089460009}
+  check2: {fileID: 551268958}
+  atkCheck1: {fileID: 2187272}
+  atkCheck2: {fileID: 141133252}
+  isDying1: {fileID: 781409249}
+  isDying2: {fileID: 318891216}
 --- !u!1 &821997026
 GameObject:
   m_ObjectHideFlags: 0
@@ -11240,7 +11312,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 63
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -15255,6 +15327,7 @@ MonoBehaviour:
   monsterHP: {fileID: 186281027}
   animatorMimic1: {fileID: 659154074}
   animatorMimic2: {fileID: 1673892898}
+  playerCheck: 0
 --- !u!65 &2089460010
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class MonsterAtkTrigger : MonoBehaviour
     public float cooldown = 2f;
     public Animator animator;
     private float lastAtkTime = 0f;
+    public bool atkCheck = false;
 
     void Update()
     {
@@ -19,6 +20,10 @@ public class MonsterAtkTrigger : MonoBehaviour
         {
             atkBox.SetActive(false);
         }
+        if (Time.time - lastAtkTime >= cooldown)
+        {
+            atkCheck = false;
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -27,6 +32,7 @@ public class MonsterAtkTrigger : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             lastAtkTime = Time.time;
+            atkCheck = true;
         }
     }
 }

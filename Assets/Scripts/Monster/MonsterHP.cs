@@ -13,7 +13,7 @@ public class MonsterHP : MonoBehaviour
     public GameObject monsterHP;
     public GameObject monstertrigger1;
     public GameObject monstertrigger2;
-    private bool isDying = false;
+    public bool isDying = false;
     private float timer = 0f;
     // Start is called before the first frame update
     void Start()
