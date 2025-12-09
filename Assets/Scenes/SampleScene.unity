@@ -2430,6 +2430,7 @@ MonoBehaviour:
   atkCheck2: {fileID: 141133252}
   isDying1: {fileID: 781409249}
   isDying2: {fileID: 318891216}
+  animator: {fileID: 1673892898}
 --- !u!1 &333364414
 GameObject:
   m_ObjectHideFlags: 3
@@ -5701,6 +5702,7 @@ MonoBehaviour:
   atkCheck2: {fileID: 141133252}
   isDying1: {fileID: 781409249}
   isDying2: {fileID: 318891216}
+  animator: {fileID: 659154074}
 --- !u!1 &821997026
 GameObject:
   m_ObjectHideFlags: 0
